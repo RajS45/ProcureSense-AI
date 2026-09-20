@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # H2 Database (embedded in Spring Boot, but we run it standalone for simplicity)
+  postgres:
+    image: postgres:15-alpine
+    container_name: procuresense-db
+    environment:
+      POSTGRES_DB: procuresense
+      POSTGRES_USER: procuresense
+      POSTGRES_PASSWORD: procuresense123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U procuresense"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Spring Boot Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: procuresense-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/procuresense
+      SPRING_DATASOURCE_USERNAME: procuresense
+      SPRING_DATASOURCE_PASSWORD: procuresense123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      AI_SERVICE_URL: http://ai-service:8001
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      JWT_SECRET: procuresense_secret_key_24hr_demo_not_for_prod
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Python AI Service
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: Dockerfile
+    container_name: procuresense-ai
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      PYTHONUNBUFFERED: 1
+    ports:
+      - "8001:8001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: procuresense-frontend
+    ports:
+      - "3000:80"
+    environment:
+      REACT_APP_API_URL: http://localhost:8080/api/v1
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: procuresense-network
