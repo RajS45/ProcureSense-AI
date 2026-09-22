@@ -465,6 +465,4 @@ For issues or questions:
 
 ---
 
-**Built in 24 hours with ❤️ using Java, React, Python, and 🤖 AI**
 
-*This is an MVP demonstration. Not production-ready without additional hardening, testing, and monitoring.*
