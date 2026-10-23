@@ -72,13 +72,39 @@ Ismein GigsUp wali visual style ke saath tumhare project ke AI extraction, eight
 
 README_ProcureSense_GigsUp_Format.md
 Document
+
+Pasted text(20261023-201536).txt
+Document
+acha format nhi h bhai ache se bana bhai
+Bhai ab samjha 😅 Tumhe sirf content nahi, GigsUp screenshot jaisa proper GitHub README design chahiye tha. Is baar badges ko 2 rows mein group kiya hai, header aur tagline improve ki hai, aur tables ko GitHub-compatible Markdown mein fix kiya hai.
+
+ProcureSense AI — Improved README
+
+Markdown file · Refined header, badges, tables and sections
+
+Download the improved README.md
+
+Ab kya karna hai?
+File download karke VS Code mein kholo.
+
+Ctrl + A, phir Ctrl + C.
+
+GitHub README editor mein purana content replace karo.
+
+Preview mein check karke commit kar do.
+
+Is version mein tumhara procurement project content preserve kiya hai aur demo scenario, scoring model aur API tables ko bhi clean kiya hai. GitHub par actual changes abhi commit nahi hue hain.
+
+
+ProcureSense_AI_README_Improved.md
+Document
 <div align="center">
 🤖 ProcureSense AI — Intelligent Procurement Decision Support
-AI-Powered Supplier Evaluation & Procurement Intelligence
-<img src="https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21" /> <img src="https://img.shields.io/badge/Spring_Boot-Backend-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot" /> <img src="https://img.shields.io/badge/Python-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="Python FastAPI" /> <img src="https://img.shields.io/badge/Google_Gemini-AI_Extraction-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Google Gemini" /> <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" /> <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
-Turning supplier quotations into explainable, data-driven procurement decisions.
+Turning Supplier Quotations into Smarter Procurement Decisions
+<p> <img src="https://img.shields.io/badge/JAVA-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21" /> <img src="https://img.shields.io/badge/SPRING_BOOT-BACKEND-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot Backend" /> <img src="https://img.shields.io/badge/PYTHON-FASTAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="Python FastAPI" /> <img src="https://img.shields.io/badge/GEMINI-AI_EXTRACTION-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Gemini AI Extraction" /> </p> <p> <img src="https://img.shields.io/badge/POSTGRESQL-DATABASE-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL Database" /> <img src="https://img.shields.io/badge/JWT-AUTHENTICATION-111111?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT Authentication" /> <img src="https://img.shields.io/badge/DOCKER-CONTAINERIZED-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /> <img src="https://img.shields.io/badge/SAP-MOCK_INTEGRATION-0070F2?style=for-the-badge&logo=sap&logoColor=white" alt="Mock SAP Integration" /> </p>
+📦 AI-Powered Procurement · ⚖️ Multi-Factor Supplier Scoring · 👥 Human-in-the-Loop Approval
 
-Extract quotation data with AI. Evaluate suppliers with consistent scoring. Keep people in control of approvals.
+Extract quotation data with AI. Compare suppliers fairly. Make explainable, deadline-aware decisions.
 
 Overview • Features • Architecture • Tech Stack • Setup • Scoring • API Docs • Roadmap
 
@@ -110,7 +136,8 @@ Google Gemini API key: Google AI
 Studio
 At least 4 GB of free disk space
 1. Clone and configure
-cd procuresense-ai
+git clone https://github.com/RajS45/ProcureSense-AI.git
+cd ProcureSense-AI
 cp .env.example .env
 Add your Gemini API key to .env:
 
@@ -119,15 +146,13 @@ GEMINI_API_KEY=your_key_here
 docker-compose up --build
 Docker Compose starts the PostgreSQL database, Spring Boot backend,
 Python AI service, and React frontend, and loads demo data
-automatically. Allow 60--90 seconds for services to become healthy.
+automatically. Allow 60–90 seconds for services to become healthy.
 
 3. Open the application
-Service Local URL
-
-Frontend http://localhost:3000
-Backend API http://localhost:8080/api/v1
-AI service http://localhost:8001
-
+Service	Local URL
+Frontend	http://localhost:3000
+Backend API	http://localhost:8080/api/v1
+AI service	http://localhost:8001
 4. Sign in
 Email: analyst@procuresense.com
 Password: demo123
@@ -136,38 +161,24 @@ credentials and secrets before using any deployment outside a controlled
 demo environment.
 
 🧪 Demo Scenario
-Goal: Purchase 10,000 steel units with a required delivery timeline
-of five days.
+Goal: Purchase 10,000 steel units with a required delivery timeline of five days.
 
-Supplier Unit price Delivery Other context Outcome
-
-Supplier A ₹100 12 days Lowest price, Rank #2
-misses the
-deadline
-
-Supplier B ₹105 4 days Strong Rank #1 ---
-reliability and Recommended
-quality
-certification
-
-Supplier C ₹110 3 days Limited Rank #3
-capacity
-
+Supplier	Unit price	Delivery	Other context	Outcome
+Supplier A	₹100	12 days	Lowest price, but misses the deadline	Rank #2
+Supplier B	₹105	4 days	Strong reliability and quality certification	Rank #1 — Recommended
+Supplier C	₹110	3 days	Limited capacity	Rank #3
 Example scores
 Supplier A: Cost=95 | Quality=75 | Delivery=0 | Reliability=80 | ... → Final: 62 (Rank #2)
 Supplier B: Cost=85 | Quality=90 | Delivery=100 | Reliability=95 | ... → Final: 89 (Rank #1)
 Supplier C: Cost=70 | Quality=80 | Delivery=95 | Reliability=75 | Capacity=60 | ... → Final: 76 (Rank #3)
-Supplier B is recommended even though it is not the cheapest: it meets
-the deadline with a one-day safety margin, has strong on-time delivery
-history (96%), and has better quality certification.
+Supplier B is recommended even though it is not the cheapest: it meets the deadline with a one-day safety margin, has strong on-time delivery history (96%), and has better quality certification.
 
 End-to-end walkthrough
 Sign in to the dashboard.
-Create a purchase requirement for 10,000 units with a five-day
-delivery requirement.
+Create a purchase requirement for 10,000 units with a five-day delivery requirement.
 Upload the three supplier quotation PDFs.
 Let the AI service extract quotation data.
-Run the deterministic 8-factor evaluation.
+Run the deterministic eight-factor evaluation.
 Compare supplier scores in the ranking table.
 Review the recommendation and its explanation.
 Have a manager approve the recommendation.
@@ -184,24 +195,12 @@ Spring Boot Backend (Port 8080)
     PostgreSQL DB       Python AI Service      Mock SAP
      Port 5432          Port 8001 / Gemini     Services
 🧰 Technology Stack
-Layer Technology Responsibility
-
-Frontend React Procurement dashboard
-and user workflow
-
-Backend Java, Spring Boot, REST API, business
-Maven rules, authorization
-
-Database PostgreSQL Application data and
-demo data
-
-AI service Python, FastAPI, Google Extract quotation data
-Gemini and generate
-explanations
-
-Integration Mock SAP services Demonstrate SAP
-integration status
-
+Layer	Technology	Responsibility
+Frontend	React	Procurement dashboard and user workflow
+Backend	Java, Spring Boot, Maven	REST API, business rules, authorization
+Database	PostgreSQL	Application and demo data
+AI service	Python, FastAPI, Google Gemini	Extract quotation data and generate explanations
+Integration	Mock SAP services	Demonstrate SAP integration status
 ✨ Main Capabilities
 Purchase requirement management
 PDF quotation upload and storage
@@ -218,23 +217,19 @@ Mock SAP integration, intended as a starting point for real
 connectivity
 ⚖️ Business Logic
 🎯 The Problem
-Choosing suppliers on price alone can overlook delivery risks, quality
-inconsistencies, reliability, capacity constraints, and dependency on a
-single supplier.
+Choosing suppliers on price alone can overlook delivery risks, quality inconsistencies, reliability, capacity constraints, and dependency on a single supplier.
 
 📊 Eight-Factor Supplier Evaluation
-Factor Weight What it evaluates
-
-Total Cost 20% Total procurement cost, not only unit price
-Quality 15% Historical quality and certifications
-Delivery 15% Ability to meet the required delivery date
-Reliability 15% Historical on-time delivery
-Capacity 10% Ability to fulfil the requested quantity
-Payment Terms 10% Business impact of payment conditions
-Supplier Risk 10% Financial, operational, and geographic risks
-Dependency 5% Supplier concentration and dependency
-
-Weights are configurable rather than hard-coded, according to the
+Factor	Weight	What it evaluates
+Total Cost	20%	Total procurement cost, not only unit price
+Quality	15%	Historical quality and certifications
+Delivery	15%	Ability to meet the required delivery date
+Reliability	15%	Historical on-time delivery
+Capacity	10%	Ability to fulfil the requested quantity
+Payment Terms	10%	Business impact of payment conditions
+Supplier Risk	10%	Financial, operational, and geographic risks
+Dependency	5%	Supplier concentration and dependency
+Weights are configurable rather than hard-coded**, according to the
 source README.
 
 Deterministic scoring
@@ -253,7 +248,7 @@ Lower cost receives a higher score. For example, among costs of ₹100K,
 
 2. Quality --- 15%
 qualityScore = (quality_certifications + historical_quality_metrics) / 2
-Scale: 0--100, where higher is better. The source example gives ISO 9001
+Scale: 0–100, where higher is better. The source example gives ISO 9001
 certification plus 98% defect-free history a score of 99.
 
 3. Delivery --- 15%
@@ -279,14 +274,12 @@ ELSE IF supplier_capacity >= 80% of quantity:
     capacityScore = 85
 ELSE:
     capacityScore = 0
-6. Payment Terms --- 10%
-Payment terms Example score
-
-Net 30--60 days 100
-Net 15--29 days 90
-50% advance 75
-100% advance 30
-
+6. Payment Terms — 10%
+Payment terms	Example score
+Net 30–60 days	100
+Net 15–29 days	90
+50% advance	75
+100% advance	30
 7. Supplier Risk --- 10%
 riskScore = (1 - aggregate_risk_level) × 100
 Risk combines financial health, geopolitical factors, and quality
@@ -309,7 +302,7 @@ Final =
   + (payment × 0.10)
   + (risk × 0.10)
   + (dependency × 0.05)
-The stated score range is 0--100. The highest-scoring supplier ranks
+The stated score range is 0–100. The highest-scoring supplier ranks
 first.
 
 📁 Project Structure
@@ -349,38 +342,17 @@ procuresense-ai/
 🔌 API Endpoints
 Base path: /api/v1
 
-Method Endpoint Purpose
-
-POST /auth/login Authenticate and return
-token/user
-
-POST /purchase-requirements Create a purchase
-requirement
-
-GET /purchase-requirements/{id} Retrieve a requirement
-
-POST /quotations/upload Upload quotation PDF(s)
-
-GET /quotations/{id} Retrieve quotation and
-extracted data
-
-POST /evaluations Trigger evaluation for
-a requirement
-
-GET /evaluations/{id}/scores Retrieve supplier
-scores
-
-GET /recommendations/{requestId} Retrieve recommendation
-and AI explanation
-
-POST /recommendations/{requestId}/approve Approve a
-recommendation as a
-manager
-
-POST /recommendations/{requestId}/alternative-scenario Simulate
-preferred-supplier
-disruption
-
+Method	Endpoint	Purpose
+POST	/auth/login	Authenticate and return token/user
+POST	/purchase-requirements	Create a purchase requirement
+GET	/purchase-requirements/{id}	Retrieve a requirement
+POST	/quotations/upload	Upload quotation PDF(s)
+GET	/quotations/{id}	Retrieve quotation and extracted data
+POST	/evaluations	Trigger evaluation for a requirement
+GET	/evaluations/{id}/scores	Retrieve supplier scores
+GET	/recommendations/{requestId}	Retrieve recommendation and AI explanation
+POST	/recommendations/{requestId}/approve	Approve a recommendation as a manager
+POST	/recommendations/{requestId}/alternative-scenario	Simulate preferred-supplier disruption
 Example login request:
 
 curl -X POST http://localhost:8080/api/v1/auth/login \
