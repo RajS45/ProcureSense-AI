@@ -44,6 +44,7 @@ The platform combines a Spring Boot backend, a Python FastAPI AI service, Google
 4. Evaluate suppliers — the scoring engine assesses suppliers across eight weighted factors.
 5. Compare recommendations — review supplier rankings, scores, and explanations.
 6. Review and approve — a manager reviews the recommendation before approval.
+ 
 ✨ At a Glance
 - 🤖 AI-powered extraction from supplier quotation documents
 - ⚖️ Eight-factor supplier scoring with explicit weights
@@ -81,6 +82,7 @@ Password: demo123
 These are demo credentials from the project README. Replace demo
 credentials and secrets before using any deployment outside a controlled
 demo environment.
+
 🧪 Demo Scenario
 Goal: Purchase 10,000 steel units with a required delivery timeline
 of five days.
@@ -231,6 +233,8 @@ The stated score range is 0--100. The highest-scoring supplier ranks
 first.
 📁 Project Structure
 The repository is organized into three application services plus database assets. The tree below uses a single fenced text block so GitHub renders the folder branches on separate lines instead of merging them into a paragraph.
+
+
 procuresense-ai/
 ├── backend/                         # Java 21 + Spring Boot REST API
 │   ├── src/
@@ -271,6 +275,7 @@ procuresense-ai/
 ├── docker-compose.yml               # Runs and connects all services
 ├── .env.example                     # Example environment configuration, if included
 └── README.md                         # Project documentation
+
 Repository accuracy: This tree follows the project layout described in the project documentation. If a filename or folder is named differently in the current GitHub repository, update that entry to match the actual path. Keep the entire tree inside the opening ```text and closing ``` lines; do not insert blank Markdown headings or lists inside that code block.
 
 🔌 API Endpoints
@@ -294,6 +299,7 @@ curl -X POST http://localhost:8080/api/v1/auth/login \
   -d '{"email":"analyst@procuresense.com","password":"demo123"}'
 The original README also lists a health-check example at
 http://localhost:8080/api/v1/health.
+
 🤖 AI Service
 The Python FastAPI service uses Google Gemini to:
 1. Extract supplier name, price, quantity, delivery date, payment
@@ -303,6 +309,7 @@ The Python FastAPI service uses Google Gemini to:
    risks and context-specific reasoning.
 Decision boundary: Gemini supports extraction and explanation. The
 deterministic scoring logic calculates supplier scores.
+
 🔐 Security
 - JWT authentication for API access
 - Role-based authorization for Analyst, Manager, and Admin
@@ -315,6 +322,7 @@ Manager: manager@procuresense.com / demo123
 Admin:   admin@procuresense.com / demo123
 Use these only in the demo environment. Do not use demo passwords or
 commit API keys in production.
+
 🧪 Testing
 Backend
 cd backend
@@ -328,6 +336,7 @@ pytest
 Manual API checks
 curl http://localhost:8080/api/v1/health
 API endpoints can also be tested with Postman or curl.
+
 🛠️ Troubleshooting
 Services do not start
 docker-compose logs -f backend
@@ -351,6 +360,7 @@ If ports 3000, 8080, or 8001 are already in use, edit the port
 mappings in docker-compose.yml. For example, change the host-side
 frontend port from 3000 to 3001 as appropriate for the configured
 container port.
+
 🚢 Deployment Notes
 The source README documents a Docker Compose-based local deployment and
 a Mock SAP integration. It does not provide a verified production
@@ -358,6 +368,7 @@ deployment procedure or claim that a live SAP connection is configured.
 Configure secrets, replace demo credentials, and validate
 environment-specific settings before deploying beyond a demo
 environment.
+
 🗺️ Future Enhancements
 The source README lists the following post-MVP items:
 - Real SAP integration (BAPIs, OData)
@@ -368,9 +379,9 @@ The source README lists the following post-MVP items:
 - Integration with procurement analytics
 - Advanced reporting and dashboards
 - Batch evaluation of multiple requirements
-📄 License
-Proprietary --- ProcureSense AI
-💬 Support
+
+📄 License & 💬 Support
+Proprietary --- ProcureSense AI.
 For troubleshooting:
 1. Check service logs with docker-compose logs -f.
 2. Verify the Gemini API key in .env.
