@@ -3,7 +3,7 @@
 📍 About ProcureSense AI
 ProcureSense AI is an intelligent procurement decision-support platform that helps teams compare supplier quotations using AI-assisted document extraction and a deterministic eight-factor scoring model. It is designed to help procurement teams look beyond the lowest price and consider delivery commitments, quality, reliability, capacity, payment terms, supplier risk, and supplier dependency.
 
-The platform combines a Spring Boot backend, a Python FastAPI AI service, Google Gemini, and PostgreSQL to support a structured supplier evaluation workflow. AI helps extract information and explain results; the weighted scoring engine calculates the supplier scores so the evaluation remains consistent and reviewable.
+The platform combines a Spring Boot backend, a Python FastAPI AI service, Google Gemini, and PostgreSQL to support a structured supplier evaluation workflow. AI helps extract information and explain results; the weighted scoring engine calculates the supplier scores so the evaluation remains consistent and reviewable. 
 
 🔄 How ProcureSense AI Works
 Create a purchase requirement — define the requested quantity and delivery deadline.
