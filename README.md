@@ -1,99 +1,3 @@
-
-User attachment
-abey aisa de procure sense ai ke liye bhi
-
-Worked for 27s
-Haan bhai 😄 ab GigsUp jaisa hi README header banaya hai — centered title, colorful technology badges, bold tagline, navigation links, emoji headings aur professional project introduction, ProcureSense AI ke liye.
-
-Download ProcureSense AI README.md
-
-GitHub par apply karne ke steps
-ProcureSense AI README editor kholo.
-
-Downloaded file ko VS Code mein open karo.
-
-Ctrl + A → Ctrl + C karo.
-
-GitHub editor mein purana content replace karke paste karo.
-
-Preview tab mein formatting check karo.
-
-Commit changes par click karo.
-
-Ismein GigsUp wali visual style ke saath tumhare project ke AI extraction, eight-factor supplier scoring, Spring Boot, FastAPI, Gemini, PostgreSQL aur JWT authentication ko highlight kiya hai. Baaki technical documentation bhi included hai.
-
-
-README_ProcureSense_GigsUp_Format.md
-Document
-
-Pasted text(20261023-201536).txt
-Document
-acha format nhi h bhai ache se bana bhai
-Bhai ab samjha 😅 Tumhe sirf content nahi, GigsUp screenshot jaisa proper GitHub README design chahiye tha. Is baar badges ko 2 rows mein group kiya hai, header aur tagline improve ki hai, aur tables ko GitHub-compatible Markdown mein fix kiya hai.
-
-ProcureSense AI — Improved README
-
-Markdown file · Refined header, badges, tables and sections
-
-Download the improved README.md
-
-Ab kya karna hai?
-File download karke VS Code mein kholo.
-
-Ctrl + A, phir Ctrl + C.
-
-GitHub README editor mein purana content replace karo.
-
-Preview mein check karke commit kar do.
-
-Is version mein tumhara procurement project content preserve kiya hai aur demo scenario, scoring model aur API tables ko bhi clean kiya hai. GitHub par actual changes abhi commit nahi hue hain.
-
-
-ProcureSense_AI_README_Improved.md
-Document
-
-Pasted text(20261023-202004).txt
-Document
-dito match kr isko bhai tu
-
-Worked for 43s
-
-
-
-
-
-Bhai, ab ProcureSense AI ka README GigsUp wale screenshot ki style mein dobara set kiya hai — title left-aligned, badges ki 2 rows, centered tagline aur navigation links. Project ki technical documentation bhi rakhi hai.
-
-Download the updated ProcureSense AI README.md
-
-GitHub par README editor kholo, file ka content paste karo aur Preview mein check karke commit kar do.
-
-Bhai, is baar formatting file mein update ki hai; GitHub par abhi commit nahi kiya.
-
-
-ProcureSense_AI_README_GigsUp_Style.md
-Document
-User attachment
-yeh wala part sahi nhi bhai , pura shhi de bhai
-
-Worked for 27s
-Haan bhai, screenshot mein issue samajh aa gaya 😅 Project Structure ka code block render nahi ho raha tha, isliye poora folder tree ek hi paragraph mein chipak raha tha.
-
-Maine README ko fix kiya hai:
-
-Project Structure ka folder tree proper code block mein.
-
-Final scoring formula ka alag code block.
-
-Supplier evaluation aur API endpoints ki tables ka correct Markdown format.
-
-Code fences aur formatting ko verify kiya.
-
-Download the corrected ProcureSense AI README.md
-
-Ab GitHub par README editor kholo, corrected file ka content paste karo aur Preview mein check karna. Project Structure mein ab folders aur branches alag-alag lines par dikhne chahiye, ek paragraph mein nahi.
-
-
 ProcureSense_AI_README_GigsUp_Style.md
 Document
 <h1 align="left">🤖 ProcureSense AI — Intelligent Procurement Decision Support</h1>
@@ -302,7 +206,7 @@ first.
 📁 Project Structure
 procuresense-ai/
 ├── backend/                    # Spring Boot (Java)
-│   ├── src/
+│   ├── src/ 
 │   │   ├── main/java/com/procuresense/
 │   │   │   ├── controller/     # REST endpoints
 │   │   │   ├── service/        # Business logic
